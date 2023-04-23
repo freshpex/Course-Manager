@@ -1,0 +1,243 @@
+<link rel="stylesheet" href="/static/style.css">
+
+{% block body %}
+
+<body>
+   
+  <div id="mySidenav" class="sidenav">
+    
+ <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+ <a href="/dash">Dashboard</a>
+    <br>
+ <a href="/students">Students</a>
+    <br>
+ <a href="/courses"> Courses</a>
+</div>
+
+<!-- Use any element to open the sidenav -->
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+<script src="/static/dash.js"></script>
+<style>
+span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+  cursor: pointer;
+  color: blue;
+  padding: 10px;
+  z-index: 2;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  display: block;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Media queries */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+/* Custom styles */
+#main {
+  margin-left: 40px;
+}
+
+#mySidenav {
+  background-color: #111;
+  color: #818181;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+  width: 0;
+  z-index: 1;
+}
+
+.closebtn {
+  color: #f1f1f1;
+  font-size: 36px;
+  margin-left: 50px;
+  position: absolute;
+  right: 25px;
+  top: 0;
+}
+
+.openbtn {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.openbtn:hover {
+  color: #f1f1f1;
+}
+
+#main {
+  margin-left: 250px;
+  transition: margin-left 0.5s;
+}
+
+#mySidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+#mySidenav a:hover {
+  color: #f1f1f1;
+}
+
+#mySidenav .closebtn {
+  margin-left: 50px;
+  font-size: 36px;
+  position: absolute;
+  right: 25px;
+  top: 0;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+
+  #main {
+    margin-left: 0;
+  }
+
+  #mySidenav {
+    padding-top: 15px;
+    width: 100%;
+  }
+
+  #mySidenav a {
+    font-size: 18px;
+  }
+}
+
+/* Additional styles */
+h1 {
+  text-align: left;
+  margin-top: 100px;
+  font-size: 40px;
+  color: #333;
+}
+form {
+  text-align: left;
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  width: 40%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color:black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #333;
+}
+.student{
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+}
+</style>
+
+
+<div>
+  <h1> Student Info </h1>
+  <ul>
+  <li class="student">Student name - {{student_info.student_name}}</li>
+  <li class="student">Student email - {{student_info.email}}</li>
+  <li class="student">Student ID - {{student_info.id}}</li>
+</ul>
+<h1>Courses info </h1>
+  <div>
+    {%if course_id != "None"%}
+    <p class="student">{{student_info.course_id}}</p>
+    <p class="student">{{student_info.course_name}}</p>
+    {%else%}
+    <p class="student">No courses yet</p>
+  {%endif%}
+</div>
+  <form class="student"action="/student/{{student_info.id}}" method="post">
+    {%if course_id != "None"%}
+    <p>Update a course</p>
+    {%else%}
+    <p>Add a course</p>
+    {%endif%}
+    <label class="student" for="course">Enter course title: </label>
+    <input class="student"type="text" name="course_id" placeholder="Enter course id" required>
+    <button class="student"type="submit">Submit</button>
+  </form>
+</div>
+<style>
+</style>
+</body>
+
+ {% endblock %}

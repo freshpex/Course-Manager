@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/static/style.css">
+
+{% block body %}
+
+<div>
+  <h1>Course Info</h1>
+  <h3>Course name - {{course_info.course_name}}</h3>
+  <h3>Course Title - {{course_info.id}}</h3>
+  <h1>Course</h1>
+  {%if student_id != "None"%}
+  <p>{{course_info.student_name}}</p>
+  {%else%}
+  <p>No students yet</p>
+  {%endif%}
+
+
+</div>
+
+ {% endblock %}

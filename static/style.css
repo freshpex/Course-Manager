@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Nunito+Sans&family=Simonetta&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+    margin: 20px;
+  }
+
+.instructions{
+    text-align: left;
+}
+  
+  h1 {
+    color: #333;
+    margin-top: 50px;
+  }
+  
+  a {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 30px;
+  }
+  
+  a:hover {
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+  }
+
+  #style.css
+form {
+  text-align: left;
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  width: 40%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color:black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #333;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  h2 {
+    color: blue;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }
+  
+  p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    background-color: black;
+    margin-top:40px;
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+  }
+  
+  .copyright {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+  }
+   
+
+
+  
+
+
+
+

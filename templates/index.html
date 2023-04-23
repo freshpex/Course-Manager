@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title%} {{ title }} {% endblock %}
+{% block content%}
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="container py-4 text-center">
+
+
+    {% if current_user.is_authenticated %}
+
+    <h1>Welcome {{ current_user.username }}</h1>
+    <a href="{{url_for('logout')}}">Logout</a>
+    
+    <div>
+        <a href="/login">Click to set up a username</a> 
+    
+    </div>
+
+    {% else %}
+    <body>
+        <h1>Welcome to Admin app</h1>
+        <h3 class="instructions"> List of features</h3>
+        <ul class="instructions">
+          <li>You will be required to enter a username with a minimum of 6 charcters and no more than 12 characters.</li>
+          <li>A dashboard containing students,courses and instructors <strong>you can access this features from a side bar</strong></li>
+          <li>The students features include creating a new student profile, reading a student's info and deleting a student profile.</li>
+          <li>The courses features include </li>
+        </ul>
+        <p>Click to get started: <a href="{{url_for('login')}}">Sign in/Sign Up</a></p>
+    
+        <footer>
+          <div class="container">
+      
+            <p class='copyright'>&copy;Enoch,Ola&Goodnews</p>
+          </div>
+        </footer>
+      
+    
+    
+    
+      </body>
+
+    
+    
+    {% endif %}
+</div>
+{% endblock %}

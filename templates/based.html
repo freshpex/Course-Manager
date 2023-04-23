@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+  <link rel="stylesheet" href="/static/dash.css">
+
+</head>
+
+
+<body>
+   
+   <div id="mySidenav" class="sidenav">
+     
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <a href="/dash">Dashboard</a>
+     <br>
+  <a href="/students">Students</a>
+     <br>
+  <a href="/courses"> Courses</a>
+     <br>
+</div>
+
+<!-- Use any element to open the sidenav -->
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+
+<div id="main" class="main">
+   {% block body %}
+
+   {% endblock %}
+</div>
+
+<script src="/static/dash.js"></script>
+  
+
+</body>
+
+</html>
